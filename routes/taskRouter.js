@@ -2,7 +2,7 @@
 const express = require("express");
 const Task = require("../models/taskModel.js");
 const router = express.Router();
-const {deleteTasks, postTasks, updateTasks,getTasks, sortAndFilterTasks, patchTasks} = require('./controllers/taskController');
+const {deleteTasks, postTasks, updateTasks,getTasks, sortAndFilterTasks, patchTasks} = require('../controllers/taskController.js');
 
 router.get('/', getTasks, sortAndFilterTasks);
 

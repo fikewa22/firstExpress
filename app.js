@@ -8,6 +8,7 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 app.use("/tasks", taskRouter);
 
 mongoose.connect("mongodb+srv://fikewabdul:Pk9AlGiya72vc1zE@todolist.rbnextl.mongodb.net/tasks?retryWrites=true&w=majority&appName=Todolist")
