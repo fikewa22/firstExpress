@@ -49,7 +49,7 @@ const postTasks=async (req, res) => {
 const patchTasks= async (req, res) => {
     try {
         const task = await Task.findById(req.params.id);
-  
+
         if (req.body.title) {
             task.title = req.body.title;
         }
@@ -59,7 +59,7 @@ const patchTasks= async (req, res) => {
         if (req.body.completed !== undefined) {
             task.completed = req.body.completed;
         }
-  
+
         const updatedTask = await task.save();
         res.json(updatedTask);
     } catch (err) {
