@@ -1,6 +1,5 @@
 const express = require('express');
 const taskRouter = require("./routes/taskRouter.js");
-const Task = require("./models/taskModel.js");
 const dotenv = require('dotenv')
 dotenv.config();
 
@@ -12,7 +11,7 @@ const MONGODB_URI= process.env.MONGODB_URI
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use("/tasks", taskRouter);
+app.use("/api/tasks", taskRouter);
 
 mongoose.connect(MONGODB_URI)
 .then(()=>{
